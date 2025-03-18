@@ -2,7 +2,7 @@
 import HeaderTable from "./HeaderTable"
 import BodyTable from './BodyTable';
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { capsuleDataType, paginationType } from '@/types';
 import { getMyCapsules } from "@/functions/getMyCapsules";
 import Pagination from "./Pagination";
@@ -21,7 +21,7 @@ const TableShowData = () =>{
     },[search])
     // console.log(data)
     return(
-        <>
+        <Suspense fallback={<div className="flex justify-center items-center mt-5"><Spinner /></div>}>
         {
             data && data.data.length > 0 ? 
             <>
@@ -38,7 +38,7 @@ const TableShowData = () =>{
                 <Spinner />
             </div>
         }
-        </>
+        </Suspense>
     )
 }
 export default TableShowData
