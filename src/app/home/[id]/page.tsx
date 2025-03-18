@@ -1,12 +1,11 @@
 import CapsuleMain from "@/components/CapsuleMain"
 
-interface  Props {
-    params: {
-        id: string
-    }
+interface Props {
+    params: Promise<{ id: string }>
 }
-const Page = ({params}:Props) => {
-    const {id} = params
+
+const Page = async({params}:Props) => {
+    const { id } = await params
     return (
         <>
             <CapsuleMain id={id} />
