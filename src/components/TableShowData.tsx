@@ -21,7 +21,7 @@ const TableShowData = () =>{
     },[search])
     // console.log(data)
     return(
-        <Suspense fallback={<div className="flex justify-center items-center mt-5"><Spinner /></div>}>
+        <>
         {
             data && data.data.length > 0 ? 
             <>
@@ -38,7 +38,15 @@ const TableShowData = () =>{
                 <Spinner />
             </div>
         }
-        </Suspense>
+        </>
     )
 }
-export default TableShowData
+const TableShowDataWrapper = () => {
+    return (
+        <Suspense fallback={<Spinner />}>
+            <TableShowData />
+        </Suspense>
+    );
+};
+
+export default TableShowDataWrapper;

@@ -1,6 +1,6 @@
 import AddNew from "@/components/AddNew"
 import Logout from "@/components/Logout"
-import TableShowData from "@/components/TableShowData"
+import TableShowDataWrapper from "@/components/TableShowData"
 
 const Home = ()=>{
     return (
@@ -11,7 +11,7 @@ const Home = ()=>{
                     <AddNew />
                 </div>
                 <div className="mt-5">
-                    <TableShowData />
+                    <TableShowDataWrapper />
                 </div>
             </div>
         </div>
