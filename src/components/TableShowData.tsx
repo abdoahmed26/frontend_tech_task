@@ -31,7 +31,7 @@ const TableShowData = () =>{
                         <BodyTable data={data.data}></BodyTable>
                     </table>
                 </div>
-                <Pagination meta={data?.pagination}/>
+                <Pagination meta={data.pagination}/>
             </>
             : data && data.data.length === 0 ? <p className="text-center mt-5">You don&apos;t have any capsule</p>
             : <div className="flex justify-center items-center mt-5">
